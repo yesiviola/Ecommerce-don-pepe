@@ -1,0 +1,139 @@
+don-pepe-carnicos/
+├── public/                          # Archivos estáticos
+│   ├── don-pepe.png                 # Logo principal
+│   ├── images/                      # Todas las imágenes
+│   │   ├── banners/                 # Carruseles y banners
+│   │   ├── products/                # Imágenes de productos
+│   │   ├── categories/              # Imágenes de categorías
+│   │   └── icons/                   # Íconos y logos
+│   └── favicon.ico                  # Favicon del sitio
+│
+├── src/
+│   ├── app/                         # Directorio principal de la aplicación (App Router)
+│   │   ├── (auth)/                  # Rutas de autenticación (grupo de rutas)
+│   │   ├── (admin)/                 # Panel de administración (grupo de rutas)
+│   │   ├── cart/                    # Página del carrito
+│   │   │   └── page.tsx             # Componente de la página
+│   │   ├── category/                # Categorías de productos
+│   │   │   └── [slug]/              # Ruta dinámica por categoría
+│   │   │       └── page.tsx         # Página de categoría específica
+│   │   ├── product/                 # Productos individuales
+│   │   │   └── [slug]/              # Ruta dinámica por producto
+│   │   │       └── page.tsx         # Página de producto específico
+│   │   ├── about/                   # Página "Quiénes somos"
+│   │   │   └── page.tsx
+│   │   ├── contact/                 # Página de contacto general
+│   │   │   └── page.tsx
+│   │   ├── wholesale/               # Página de venta mayorista
+│   │   │   └── page.tsx
+│   │   ├── globals.css              # Estilos globales de Tailwind
+│   │   ├── layout.tsx               # Layout principal de la aplicación
+│   │   └── page.tsx                 # Página de inicio (Home)
+│   │
+│   ├── components/                  # Componentes reutilizables
+│   │   ├── ui/                      # Componentes de interfaz base
+│   │   │   └── Skeleton.tsx         # Esqueleto de carga
+│   │   │   # ...otros componentes UI (Button, Input, Card, etc.)
+│   │   │
+│   │   ├── layout/                  # Componentes de estructura
+│   │   │   ├── Header/              # Encabezado del sitio
+│   │   │   │   ├── Header.tsx       # Componente principal
+│   │   │   │   ├── SearchBar.tsx    # Barra de búsqueda inteligente
+│   │   │   │   └── Navigation.tsx   # Navegación principal
+│   │   │   ├── TopBanner/           # Banner superior con carrusel
+│   │   │   │   └── TopBanner.tsx
+│   │   │   └── Footer/              # Pie de página
+│   │   │       └── Footer.tsx
+│   │   │
+│   │   ├── products/                # Componentes relacionados a productos
+│   │   │   ├── ProductCard/         # Tarjeta de producto individual
+│   │   │   │   └── ProductCard.tsx
+│   │   │   ├── ProductPrice/        # Componente de precios (regular/descuento)
+│   │   │   │   └── ProductPrice.tsx
+│   │   │   ├── ProductGrid/         # Grid de productos
+│   │   │   │   └── ProductGrid.tsx
+│   │   │   └── ProductCarousel/     # Carrusel de productos
+│   │   │       └── ProductCarousel.tsx
+│   │   │
+│   │   ├── carts/                   # Componentes del carrito
+│   │   │   ├── CartIcon/            # Ícono del carrito con contador
+│   │   │   │   └── CartIcon.tsx
+│   │   │   └── CartModal/           # Modal/desplegable del carrito
+│   │   │       └── CartModal.tsx
+│   │   │
+│   │   ├── forms/                   # Formularios reutilizables
+│   │   │   ├── WholesaleForm/       # Formulario de venta mayorista
+│   │   │   │   └── WholesaleForm.tsx
+│   │   │   └── ContactForm/         # Formulario de contacto general
+│   │   │       └── ContactForm.tsx
+│   │   │
+│   │   └── admin/                   # Componentes de administración (futuro)
+│   │       └── ProductForm/         # Formulario de productos para admin
+│   │           └── ProductForm.tsx
+│   │
+│   ├── data/                        # Datos estáticos y mockups
+│   │   ├── categories.ts            # Categorías de productos
+│   │   ├── featured.ts              # Productos destacados
+│   │   └── payment-methods.ts       # Métodos de pago aceptados
+│   │
+│   ├── lib/                         # Utilidades y librerías
+│   │   ├── utils.ts                 # Funciones utilitarias generales
+│   │   ├── constants.ts             # Constantes de la aplicación
+│   │   ├── contentGenerator.ts      # Algoritmo de generación de contenido
+│   │   ├── searchAlgorithm.ts       # Algoritmo de búsqueda inteligente
+│   │   ├── analytics.ts             # Utilidades de analytics y tracking
+│   │   └── cookies.ts               # Manejo de cookies
+│   │
+│   ├── hooks/                       # Custom hooks
+│   │   ├── useCart.ts               # Hook para manejo del carrito
+│   │   ├── useSearch.ts             # Hook para búsqueda de productos
+│   │   └── useLocalStorage.ts       # Hook para localStorage
+│   │
+│   ├── types/                       # Definiciones de TypeScript
+│   │   ├── product.ts               # Tipos relacionados a productos
+│   │   ├── cart.ts                  # Tipos relacionados al carrito
+│   │   └── user.ts                  # Tipos relacionados al usuario
+│   │
+│   ├── stores/                      # Stores de Zustand (gestión de estado)
+│   │   ├── useCartStore.ts          # Store para el carrito de compras
+│   │   └── useProductStore.ts       # Store para productos
+│   │
+│   └── contexts/                    # Contextos de React
+│       ├── CartContext.tsx          # Context para el carrito
+│       └── SearchContext.tsx        # Context para búsquedas
+│
+├── next.config.js                   # Configuración de Next.js
+├── tailwind.config.js               # Configuración de Tailwind CSS
+├── tsconfig.json                    # Configuración de TypeScript
+└── package.json                     # Dependencias del proyecto
+
+
+
+
+Estructura de Rutas (App Router)
+
+
+/
+├── /cart                          # Carrito de compras
+├── /category/[slug]               # Categorías dinámicas
+├── /product/[slug]                # Productos individuales
+├── /about                         # Quiénes somos
+├── /contact                       # Contacto general
+├── /wholesale                     # Venta mayorista
+├── /admin                         # Panel de administración (protegido)
+└── /auth                          # Autenticación (login/registro)
+
+
+
+
+Estructura de Carpetas Recomendada para SEO
+
+
+src/
+├── components/
+│   ├── seo/
+│   │   ├── ProductStructuredData.tsx
+│   │   ├── BreadcrumbStructuredData.tsx
+│   │   └── OrganizationStructuredData.tsx
+│   └── 
+│      
